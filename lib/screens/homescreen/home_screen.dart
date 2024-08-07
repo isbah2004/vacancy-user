@@ -24,26 +24,24 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: AppTheme.whiteColor,
       appBar: AppBar(
-      
-          actions: [
-            IconButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const SummaryScreen(),
-                    ),
-                  );
-                },
-                icon: const Icon(Icons.summarize))
-          ],
+        actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SummaryScreen(),
+                  ),
+                );
+              },
+              icon: const Icon(Icons.summarize))
+        ],
         centerTitle: true,
         title: Text(
-              'Current Manpower Status and Vacancy Overview',
-
+          'Current Manpower Status and Vacancy Overview',
           style: Theme.of(context).textTheme.bodyLarge!.copyWith(
               color: AppTheme.whiteColor,
-              fontSize: 25,
+              fontSize: 18,
               fontWeight: FontWeight.bold),
         ),
       ),
@@ -112,12 +110,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                     approvedNumbers: data['approved_numbers'],
                                     manpowerNumbers: data['manpower_numbers'],
                                     vacancy: data['vacancy'],
-                                    detail: data['details'],
-                                    number: data['number']),
+                                    number: data['number'], snapshot: snapshot, docId: document.id,),
                               ),
                             );
                           },
-                          child: Hero(tag: data['department'],
+                          child: Hero(
+                            tag: data['department'],
                             child: Container(
                               padding: const EdgeInsets.symmetric(
                                   horizontal: 8, vertical: 18),
@@ -135,8 +133,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                     height: 25,
                                     width: 25,
                                     child: Image(
-                                        image:
-                                            AssetImage(Constants.jobSearchIcon)),
+                                        image: AssetImage(
+                                            Constants.jobSearchIcon)),
                                   ),
                                   const SizedBox(
                                     width: 8,
