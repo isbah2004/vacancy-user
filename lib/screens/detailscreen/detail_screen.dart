@@ -161,7 +161,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                                 label: Expanded(
                                                     child: FittedBox(
                                                         child: Text(
-                                                            'Resignation Date')))),
+                                                            'Last Working Day')))),
                                             DataColumn(
                                                 label: FittedBox(
                                                     child:
